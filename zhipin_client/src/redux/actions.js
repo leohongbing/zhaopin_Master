@@ -38,7 +38,7 @@ const init_msg = (chatMsgs) => ({type:INIT_MSG,data:chatMsgs})
 function connectSocket(dispatch,userid) {
   if(!io.socket){
     //连接服务器返回连接对象
-    io.socket = io('ws://192.168.43.196:4000')
+    io.socket = io('ws://127.0.0.1:4000')
     //绑定监听接受来自服务端的消息
     io.socket.on('receiveMsg',function ({chatMsg,users}) {
       if(userid === chatMsg.from || userid === chatMsg.to){
